@@ -15,7 +15,7 @@ export class Layout extends Component {
           <div className={title}>Ahead: Accident Prone Zones</div>
           <div>Numbers represent car accidents in an area</div>
           <div className={subTitle}>
-            <a href="https://github.com/istarkov/google-map-clustering-example">
+            <a href="https://github.com/oosharma/Cal-Hacks-Ahead/blob/master/public/data-set.json">
               Download Dataset
             </a>
           </div>
