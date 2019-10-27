@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import compose from 'recompose/compose';
-import defaultProps from 'recompose/defaultProps';
-import layoutStyles from './Layout.sass';
-import GMap from './GMap';
+import React, { Component } from "react";
+import compose from "recompose/compose";
+import defaultProps from "recompose/defaultProps";
+import layoutStyles from "./Layout.sass";
+import GMap from "./GMap";
 // for hmr to work I need the first class to extend Component
 export class Layout extends Component {
   render() {
-    const { styles: { layout, header, main, footer, logo } } = this.props;
+    const {
+      styles: { layout, header, title, main, footer, subTitle }
+    } = this.props;
     return (
       <div className={layout}>
         <header className={header}>
-          <div>
-            Clustering example google-map-react (zoom, move to play with)
-          </div>
-          <div>
+          <div className={title}>Ahead: Accident Prone Zones</div>
+          <div>Numbers represent car accidents in an area</div>
+          <div className={subTitle}>
             <a href="https://github.com/istarkov/google-map-clustering-example">
-              Star at github.com
+              Download Dataset
             </a>
           </div>
         </header>
@@ -23,15 +24,11 @@ export class Layout extends Component {
           <GMap />
         </main>
         <footer className={footer}>
+          <div></div>
+          <div></div>
           <div>
-            <a href="https://github.com/istarkov">
-              Ivan Starkov
-            </a>
-          </div>
-          <div className={logo}></div>
-          <div>
-            <a href="https://twitter.com/icelabaratory">
-              @icelabaratory
+            <a href="https://github.com/istarkov/google-map-clustering-example">
+              Credits: Clustering example google-map-react
             </a>
           </div>
         </footer>
@@ -42,7 +39,7 @@ export class Layout extends Component {
 
 export const layoutHOC = compose(
   defaultProps({
-    styles: layoutStyles,
+    styles: layoutStyles
   })
 );
 
