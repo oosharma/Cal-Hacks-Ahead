@@ -1,6 +1,7 @@
 To run this project locally
 
 ```bash
+# cd into root directory
 npm install
 npm run start
 # open your browser at localhost:4000
